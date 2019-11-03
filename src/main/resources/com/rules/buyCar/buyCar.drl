@@ -1,0 +1,23 @@
+package com.rules.buyCar
+import com.example.demo.drools7.Car
+
+dialect  "mvel"
+
+rule "buycer age >60 "
+agenda-group "buycar-group1"
+
+when
+    $car : Car(person.age >60)
+then
+    $car.setDiscount(80);
+   System.out.println("buyCar===这个人的年龄大于60，"+$car.getPerson().getAge());
+end
+
+rule "buyer age <=60 "
+agenda-group "buycar-group1"
+when
+    $car : Car(person.age <=60)
+then
+    $car.setDiscount(90);
+   System.out.println("buyCar===这个人的年龄小于或等于60，"+$car.getPerson().getAge());
+end

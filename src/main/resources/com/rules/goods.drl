@@ -1,0 +1,11 @@
+package com.rules
+import com.example.demo.drools5.Goods
+
+rule "test-drools5-api"
+
+when
+    $goods : Goods(discount == 100)
+then
+    $goods.setDiscount(70);
+    System.out.println("goods===7折");
+end

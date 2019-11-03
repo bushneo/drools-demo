@@ -1,0 +1,10 @@
+package com.rules.stateless
+import com.example.demo.drools7.Person
+dialect  "mvel"
+
+rule "stateless"
+    when
+        $person : Person()
+    then
+        System.out.println("stateless==="+$person.getAge());
+end
